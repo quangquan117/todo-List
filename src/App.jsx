@@ -1,26 +1,40 @@
 import { useState } from 'react'
 import './App.css'
+import Card from './components/Card'
 import Form from "./components/Form"
 
-function TodoApp() {
-  const [tasks, setTasks] = useState([]);
+function App() {
 
+  const [tasks, setTasks] = useState([
+    {titre: 'Task 1',
+      done: false,
+    },
+    {titre: 'Task 2',
+      done: false,
+    },
+    {titre: 'Task 3',
+      done: false,
+    },
+    {titre: 'Task 4',
+      done: false,
+    },
+  ])
+  
   function addTask(newTask) {
     if (newTask === "") return;
     setTasks([...tasks, newTask]);
   }
 
   return (
-    <div>
-      <h2>Ma To-Do List</h2>
-      <Form onAddTask={addTask} />
-      <ul>
-        {tasks.map((t, i) => (
-          <li key={i}>{t}</li>
-        ))}
-      </ul>
-    </div>
-  );
+    <>
+      <h1>Task</h1>
+      {
+        tasks.map( (item, index) => (
+          <Card key={index} titre={item.titre} done={item.done}/>
+        ))
+      }
+    </>
+  )
 }
 
-export default TodoApp
+export default App

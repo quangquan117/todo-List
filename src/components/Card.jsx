@@ -1,6 +1,6 @@
-export default function Card( { titre } ) {
+export default function Card( { titre, done } ) {
     return (
-        <div className="card">
+        <div className={done ? "check" : "noCheck"}>
             <h3>{titre}</h3>
             {/* Ajouter le bouton done et supprimer */}
         </div>
