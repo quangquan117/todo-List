@@ -25,16 +25,24 @@ function App() {
     setTasks([...tasks, newTask]);
   }
 
+  function deleteTask(index) {
+    setTasks(tasks.filter((_, i) => i !== index));
+  }
+
   return (
-    <>
-      <h1>Task</h1>
-      {
-        tasks.map( (item, index) => (
-          <Card key={index} titre={item.titre} done={item.done}/>
-        ))
-      }
-    </>
-  )
+    <div>
+      <h2>Ma To-Do List</h2>
+      <Form onAddTask={addTask} />
+      <ul>
+        {tasks.map((t, i) => (
+          <li key={i}>
+            {t.titre} {/* ✅ on affiche la propriété */}
+            <button onClick={() => deleteTask(i)}>Supprimer</button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
 export default App
