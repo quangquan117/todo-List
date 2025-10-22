@@ -7,10 +7,18 @@ import Card from './components/Card'
 function App() {
 
   const [tasks, setTasks] = useState([
-    {titre: 'Task 1'},
-    {titre: 'Task 2'},
-    {titre: 'Task 3'},
-    {titre: 'Task 4'},
+    {titre: 'Task 1',
+      done: false,
+    },
+    {titre: 'Task 2',
+      done: false,
+    },
+    {titre: 'Task 3',
+      done: false,
+    },
+    {titre: 'Task 4',
+      done: false,
+    },
   ])
 
   return (
@@ -18,7 +26,7 @@ function App() {
       <h1>Task</h1>
       {
         tasks.map( (item, index) => (
-          <Card key={index} titre={item.titre} />
+          <Card key={index} titre={item.titre} done={item.done}/>
         ))
       }
     </>
