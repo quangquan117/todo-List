@@ -1,7 +1,7 @@
-.done{
+.check{
     background-color: lightgreen;
 }
 
-.noDone{
+.noCheck{
     background-color: lightcoral;
 }

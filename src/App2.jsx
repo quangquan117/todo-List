@@ -1,7 +1,8 @@
 import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
 import './App.css'
 import Card from './components/Card'
-import ButtonCheck from './components/ButtonCheck'
 
 function App() {
 
@@ -19,16 +20,6 @@ function App() {
       done: false,
     },
   ])
-  
-  function addTask(newTask) {
-    if (newTask === "") return;
-    setTasks([...tasks, newTask]);
-  }
-
-  const changeDone = (index) => {
-    setTasks( tasks.map( (item, i) => {
-      return (i === index? { ...item, done: !item.done } : item)
-    }))}
 
   return (
     <>
