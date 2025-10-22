@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Card from './components/Card'
-import ButtonCheck from './components/ButtonCheck'
+import TodoApp from './components/Form'
 
 function App() {
 
@@ -33,6 +33,7 @@ function App() {
   return (
     <>
       <h1>Task</h1>
+      <TodoApp addTask={addTask}/>
       {
         tasks.map( (item, index) => (
           <Card key={index} titre={item.titre} done={item.done} onClick={() => changeDone(index)}/>
