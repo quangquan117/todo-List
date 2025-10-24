@@ -1,16 +1,31 @@
-# React + Vite
+# Todo List
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Une application simple et efficace pour gérer vos tâches quotidiennes avec persistance locale dans le navigateur.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📋 Fonctionnalités
 
-## React Compiler
+- **Ajouter des tâches** : Saisissez une tâche et validez pour l'ajouter à la liste.
+- **Marquer comme terminée** : Cliquez sur "Done?" pour cocher une tâche.
+- **Supprimer une tâche** : Le bouton "Supprimer" apparaît uniquement pour les tâches terminées.
+- **Persistance automatique** : Les tâches sont sauvegardées dans le navigateur et restaurées au prochain lancement.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠 Prérequis
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- [Node.js](https://nodejs.org/) (version 22.21 ou supérieure)
+- npm (inclus avec Node.js) ou [yarn](https://yarnpkg.com/)
+
+---
+
+## 🚀 Installation et lancement
+
+1. **Cloner le dépôt** :
+   ```bash
+   git clone https://github.com/quangquan117/todo-List.git
+   cd todo-List
+
+1. **lancement** :
+    npm run dev
