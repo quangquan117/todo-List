@@ -1,13 +1,13 @@
-import { useState } from "react";
+import { useState } from "react"
 
-function TodoApp() {
-  const [task, setTask] = useState("");
-  const [tasks, setTasks] = useState([]);
+function TodoApp({addTask}) {
+  const [task, setTask] = useState("")
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (task === "") return;
-    setTasks([...tasks, task]);
+    if (task.trim() === "") return;
+    addTask({ titre: task, done: false });
+    console.log(task);
     setTask("");
   }
 
@@ -23,12 +23,6 @@ function TodoApp() {
         />
         <button type="submit">Ajouter</button>
       </form>
-
-      <ul>
-        {tasks.map((t, i) => (
-          <li key={i}>{t}</li>
-        ))}
-      </ul>
     </div>
   );
 }
