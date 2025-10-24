@@ -11,6 +11,10 @@ function App() {
     { titre: 'Task 4', done: false },
   ]);
 
+  function countNoDoneTask() {
+    return tasks.filter(task => !task.done).length;
+  }
+
   function addTask(newTask) {
     if (newTask.titre === "") return;
     setTasks([...tasks, newTask]);
@@ -29,6 +33,7 @@ function App() {
   return (
     <>
       <h1>Task</h1>
+      <h2>Nombre de tâches à faire : {countNoDoneTask()}</h2>
       <TodoApp addTask={addTask} />
       {tasks.map((item, index) => (
         <Card
