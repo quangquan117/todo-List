@@ -1,9 +1,9 @@
-export default function Card( { titre, done, onClick } ) {
+export default function Card( { titre, done, onClick, deleteTask, index}) {
     return (
         <div className={done ? "check" : "noCheck"}>
             <h3>{titre}</h3>
             <button onClick={onClick}>Done?</button>
-            {/* Ajouter le bouton supprimer */}
+            <button onClick={() => deleteTask(index)}>Supprimer</button>
         </div>
     )
 }
