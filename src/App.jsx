@@ -1,15 +1,23 @@
-import { useState } from 'react';
+import { use, useEffect, useState } from 'react';
 import './App.css';
 import Card from './components/Card';
 import TodoApp from './components/Form';
 
+const savedTasks = (tasks) => {
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+
+const loadedTasks = () => {
+  const tasks = localStorage.getItem('tasks');
+  return tasks ? JSON.parse(tasks) : [];
+}
+
 function App() {
-  const [tasks, setTasks] = useState([
-    { titre: 'Task 1', done: false },
-    { titre: 'Task 2', done: false },
-    { titre: 'Task 3', done: false },
-    { titre: 'Task 4', done: false },
-  ]);
+  const [tasks, setTasks] = useState(loadedTasks());
+
+  useEffect(() => {
+    savedTasks(tasks);
+  }, [tasks]);
 
   function countNoDoneTask() {
     return tasks.filter(task => !task.done).length;
@@ -21,6 +29,7 @@ function App() {
   }
 
   function deleteTask(index) {
+    if (tasks[index].done === false) return;
     setTasks(tasks.filter((_, i) => i !== index));
   }
 
